@@ -6,4 +6,12 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   base: "/",
   plugins: [vue(), tailwindcss()],
+  build: {
+    outDir: "dist", // folder hasil build (standar Vite)
+    assetsDir: "assets", // tempat asset statis
+    sourcemap: false, // optional: matikan sourcemap untuk production
+  },
+  server: {
+    open: true, // auto open browser saat dev server
+  },
 });
