@@ -8,7 +8,7 @@ export default defineConfig({
   base: "/portfolio/",
   plugins: [vue(), tailwindcss()],
   build: {
-    outDir: ".", // folder hasil build (standar Vite)
+    outDir: "dist", // folder hasil build (standar Vite)
     // assetsDir: "assets", // tempat asset statis
     // sourcemap: false, // optional: matikan sourcemap untuk production
   },
