@@ -82,7 +82,7 @@ const isInView = useInView(refSection, { once: true, margin: "-100px" });
 const skills = [
   {
     icon: "code",
-    title: "Vue & TypeScript",
+    title: "Vue & Flutter",
     description: "Building scalable applications",
     color: "from-blue-400 to-blue-600",
   },

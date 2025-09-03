@@ -12,7 +12,7 @@
         >
           <div class="relative overflow-hidden rounded-2xl shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDF8fHx8MTc1Njc5ODg4NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src="../assets/image/photo-profile.png"
               alt="Profile"
               class="w-full h-[500px] object-cover"
             />
@@ -21,7 +21,7 @@
             ></div>
           </div>
           <!-- Floating accent -->
-          <Motion
+          <!-- <Motion
             class="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full shadow-lg flex items-center justify-center"
             :animate="{ rotate: [0, 360] }"
             :transition="{ duration: 8, repeat: Infinity, ease: 'linear' }"
@@ -29,7 +29,7 @@
             <span class="material-symbols-outlined text-white text-3xl">
               auto_awesome
             </span>
-          </Motion>
+          </Motion> -->
         </Motion>
 
         <!-- Content -->

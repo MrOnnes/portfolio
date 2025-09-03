@@ -54,7 +54,7 @@
     </div>
 
     <!-- Floatin accent illustration -->
-    <Motion
+    <!-- <Motion
       class="absolute top-1/2 right-10 transform -translate-y-1/2"
       :animate="{ y: [0, -15, 0], rotate: [0, 5, 0, -5, 0] }"
       :transition="{ duration: 4, repeat: Infinity, ease: 'easeInOut' }"
@@ -69,7 +69,7 @@
           ></div>
         </div>
       </div>
-    </Motion>
+    </Motion> -->
 
     <!-- Scroll indicator -->
     <Motion

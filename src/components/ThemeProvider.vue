@@ -3,7 +3,7 @@ import { ref, onMounted, provide } from "vue";
 
 type Theme = "light" | "dark";
 
-const theme = ref<Theme>("light");
+const theme = ref<Theme>("dark");
 
 function setTheme(value: Theme) {
   theme.value = value;
