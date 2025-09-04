@@ -1,6 +1,6 @@
 import { onMounted, ref } from "vue";
 
-const theme = ref("light");
+const theme = ref("dark");
 
 export function useTheme() {
   function setTheme(value) {
@@ -14,15 +14,18 @@ export function useTheme() {
   }
 
   onMounted(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved) {
-      setTheme(saved);
-    } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      setTheme(prefersDark ? "dark" : "light");
-    }
+    setTheme("dark");
+    // const saved = localStorage.getItem("theme");
+    // if (saved) {
+    //   console.log("saved theme", saved);
+    //   setTheme(saved);
+    // } else {
+    //   setTheme("dark");
+    //   // const prefersDark = window.matchMedia(
+    //   //   "(prefers-color-scheme: dark)"
+    //   // ).matches;
+    //   // setTheme(prefersDark ? "dark" : "light");
+    // }
   });
 
   return {

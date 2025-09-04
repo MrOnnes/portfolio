@@ -1,17 +1,27 @@
 <template>
-  <Section
+  <section
+    ref="sectionRef"
     className="min-h-screen bg-gray-100 dark:bg-gray-900 relative overflow-hidden flex items-center justify-center"
   >
     <!-- /* Background gradient shapes */  -->
+    <!-- <Motion
+      class="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-300 via-pink-300 to-orange-300 rounded-full opacity-70 blur-3xl"
+      :animate="{ x: [0, 30, 0], y: [0, -50, 0] }" -->
     <Motion
       class="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-300 via-pink-300 to-orange-300 rounded-full opacity-70 blur-3xl"
-      :animate="{ x: [0, 30, 0], y: [0, -20, 0] }"
+      :animate="{
+        x: [-scrollOffset * 5, scrollOffset * 5 - 30, scrollOffset * 5],
+        y: [0, -50, 0],
+      }"
       :transition="{ duration: 6, repeat: Infinity, ease: 'easeInOut' }"
     />
 
     <Motion
       class="absolute bottom-20 left-20 w-64 h-64 bg-gradient-to-br from-blue-300 via-cyan-300 to-teal-300 rounded-full opacity-60 blur-2xl"
-      :animate="{ x: [0, -20, 0], y: [0, 15, 0] }"
+      :animate="{
+        x: [scrollOffset * 5, scrollOffset * 5 - 20, scrollOffset * 5],
+        y: [0, 15, 0],
+      }"
       :transition="{ duration: 4, repeat: Infinity, ease: 'easeInOut' }"
     />
 
@@ -39,16 +49,17 @@
           :initial="{ opacity: 0, scale: 0.8 }"
           :animate="{ opacity: 1, scale: 1 }"
           :transition="{ duration: 0.6, delay: 0.6 }"
-          ><Button
+        >
+          <button
             size="lg"
             class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            <div class="flex gap-2">
+            <a href="#skills" class="flex gap-2">
               View My Work<span class="material-symbols-outlined">
                 arrow_downward
               </span>
-            </div>
-          </Button>
+            </a>
+          </button>
         </Motion>
       </Motion>
     </div>
@@ -85,9 +96,31 @@
         ></div>
       </div>
     </Motion>
-  </Section>
+  </section>
 </template>
 <script setup lang="ts">
 import { Motion } from "@oku-ui/motion";
+import { useScroll, useTransform } from "motion-v";
+import { computed, onMounted, onUnmounted, ref, watchEffect } from "vue";
+
+const scrollY = ref(0);
+
+const handleScroll = () => {
+  scrollY.value = window.scrollY;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
+
+// Hitung pergeseran berdasarkan scroll
+// misal: setiap 1px scroll → geser 0.3px ke atas
+const scrollOffset = computed(() => {
+  return -scrollY.value * 0.3;
+});
 </script>
-<style lang=""></style>
+<style></style>

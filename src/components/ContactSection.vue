@@ -96,18 +96,18 @@
               <span>senno.adi2509@gmail.com</span>
             </div>
 
-            <!-- <div
+            <div
               class="flex items-center gap-3 text-gray-600 dark:text-gray-300"
             >
               <div
                 class="w-10 h-10 bg-gradient-to-br from-green-400 to-teal-600 rounded-lg flex items-center justify-center"
               >
                 <span class="material-symbols-outlined text-white">
-                  calendar_month
+                  phone
                 </span>
               </div>
-              <span>Available for new projects</span>
-            </div> -->
+              <span>+62 815-7444-4586</span>
+            </div>
           </Motion>
 
           <!-- Social Links -->

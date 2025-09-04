@@ -6,7 +6,6 @@
         <Motion
           ref="target"
           :initial="{ opacity: 0, x: -50 }"
-          :animate="inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }"
           :transition="{ duration: 0.8, delay: 0.2 }"
           class="relative"
         >
@@ -35,7 +34,6 @@
         <!-- Content -->
         <Motion
           :initial="{ opacity: 0, x: 50 }"
-          :animate="inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }"
           :transition="{ duration: 0.8, delay: 0.4 }"
           class="space-y-8"
         >
@@ -114,6 +112,6 @@ const target = ref<HTMLElement | null>(null);
 const inView = useInView(target, { once: true, margin: "-100px" });
 // setiap kali nilai inView berubah, log ke console
 watch(inView, (val) => {
-  console.log("Is in view:", val);
+  console.log("Is in view About:", val);
 });
 </script>

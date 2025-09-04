@@ -56,7 +56,7 @@ import ThemeToggle from "./components/ThemeToggle.vue";
         </div>
       </nav>
 
-      <Main>
+      <main>
         <section id="hero">
           <HeroSection />
         </section>
@@ -68,13 +68,13 @@ import ThemeToggle from "./components/ThemeToggle.vue";
           <SkillsSection />
         </section>
         <!-- //todo Perbaiki bagian project -->
-        <!-- <section id="projects">
+        <section id="projects">
           <ProjectSection />
-        </section> -->
+        </section>
         <section id="contact">
           <ContactSection />
         </section>
-      </Main>
+      </main>
     </div>
   </ThemeProvider>
 
@@ -82,9 +82,9 @@ import ThemeToggle from "./components/ThemeToggle.vue";
 </template>
 
 <style scoped>
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {

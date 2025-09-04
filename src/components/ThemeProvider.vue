@@ -20,7 +20,8 @@ onMounted(() => {
   const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
-  setTheme(savedTheme || systemTheme);
+  // setTheme(savedTheme || systemTheme);
+  setTheme(savedTheme || "dark");
 });
 
 // provide ke semua anak komponen

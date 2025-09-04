@@ -15,12 +15,12 @@
         rotate: theme === 'light' ? 0 : 180,
       }"
       :transition="{ duration: 0.3 }"
-      class="absolute"
+      class="absolute flex items-center justify-center w-full h-full"
     >
       <span class="material-symbols-outlined text-yellow-500 text-[20px]">
         sunny
-      </span></Motion
-    >
+      </span>
+    </Motion>
     <!-- Moon icon -->
     <Motion
       initial="false"
@@ -29,7 +29,7 @@
         rotate: theme === 'dark' ? 0 : -180,
       }"
       :transition="{ duration: 0.3 }"
-      class="absolute"
+      class="absolute flex items-center justify-center w-full h-full"
     >
       <span class="material-symbols-outlined text-blue-400 text-[20px]">
         dark_mode
