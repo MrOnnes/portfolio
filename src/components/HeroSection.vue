@@ -10,7 +10,7 @@
     <Motion
       class="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-purple-300 via-pink-300 to-orange-300 rounded-full opacity-70 blur-3xl"
       :animate="{
-        x: [-scrollOffset * 5, scrollOffset * 5 - 30, scrollOffset * 5],
+        x: [-scrollOffset * 2, scrollOffset * 2 - 30, scrollOffset * 2],
         y: [0, -50, 0],
       }"
       :transition="{ duration: 6, repeat: Infinity, ease: 'easeInOut' }"
@@ -19,7 +19,7 @@
     <Motion
       class="absolute bottom-20 left-20 w-64 h-64 bg-gradient-to-br from-blue-300 via-cyan-300 to-teal-300 rounded-full opacity-60 blur-2xl"
       :animate="{
-        x: [scrollOffset * 5, scrollOffset * 5 - 20, scrollOffset * 5],
+        x: [scrollOffset / 2, scrollOffset / 2 - 20, scrollOffset / 2],
         y: [0, 15, 0],
       }"
       :transition="{ duration: 4, repeat: Infinity, ease: 'easeInOut' }"

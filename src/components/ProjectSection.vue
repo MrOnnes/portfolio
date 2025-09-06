@@ -4,6 +4,7 @@ import { ref, watch } from "vue";
 // import { useInView } from "motion-v";
 import portoMobileImg from "../assets/image/porto-mobile-app.png";
 import portoWebsiteImg from "../assets/image/porto-website.png";
+import portoHomi from "../assets/image/porto-homi.png";
 
 const projects = [
   {
@@ -32,17 +33,27 @@ const projects = [
     // codeUrl: "https://github.com/username/banking",
   },
   {
-    title: "Creative Portfolio",
+    title: "Homi – Real Estate Marketplace Website",
     description:
-      "A stunning portfolio website showcasing modern design principles and smooth animations.",
-    image:
-      "https://images.unsplash.com/photo-1676731820390-a119efe23333?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-    tags: ["Motion", "Design"],
-    gradient: "from-pink-500 to-orange-500",
-    buttonText: "demo",
-    demoUrl: "https://example.com/portfolio",
-    codeUrl: "https://github.com/username/portfolio",
+      "A property marketplace platform that simplifies buying and selling real estate. Designed with an intuitive UI, Homi allows users to explore listings, manage property details, and connect with potential buyers or sellers seamlessly.",
+    image: portoHomi,
+    tags: ["Figma"],
+    gradient: "from-orange-500 to-red-600",
+    demoUrl: "#",
+    // codeUrl: "https://github.com/username/homi",
   },
+  // {
+  //   title: "Creative Portfolio",
+  //   description:
+  //     "A stunning portfolio website showcasing modern design principles and smooth animations.",
+  //   image:
+  //     "https://images.unsplash.com/photo-1676731820390-a119efe23333?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+  //   tags: ["Motion", "Design"],
+  //   gradient: "from-pink-500 to-orange-500",
+  //   buttonText: "demo",
+  //   demoUrl: "https://example.com/portfolio",
+  //   codeUrl: "https://github.com/username/portfolio",
+  // },
 ];
 
 const sectionRef = ref<HTMLElement | null>(null);
@@ -124,11 +135,14 @@ const selectedProject = ref<(typeof projects)[0] | null>(null);
         :initial="{ opacity: 0, y: 30 }"
         :animate="isInView.value ? { opacity: 1, y: 0 } : {}" -->
       <Motion class="text-center mt-12">
-        <button
+        <a
+          href="https://drive.google.com/file/d/1MU6QjMmcez07SQRAm7q9R1JK1BKBvxPt/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
           class="border border-purple-300 dark:border-purple-600 text-purple-700 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900 hover:border-purple-400 dark:hover:border-purple-500 px-8 py-3 rounded-full font-medium"
         >
           View Résumé
-        </button>
+        </a>
       </Motion>
     </div>
 

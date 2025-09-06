@@ -79,6 +79,7 @@ function startAutoPlay() {
       goToNext();
     }, 4000);
   }
+  console.log("isAutoPlay?", isAutoPlaying.value);
 }
 function stopAutoPlay() {
   if (intervalId) {
@@ -90,25 +91,27 @@ function stopAutoPlay() {
 function pauseAndResume() {
   stopAutoPlay();
   isAutoPlaying.value = false;
+
   setTimeout(() => {
     isAutoPlaying.value = true;
     startAutoPlay();
   }, 8000);
+  console.log("its pauseAndResume, isAutoPlay?", isAutoPlaying.value);
 }
 
-function goToNext() {
+function goToNext(isManual = false) {
   currentIndex.value = (currentIndex.value + 1) % skills.length;
-  pauseAndResume();
+  if (isManual) pauseAndResume();
 }
 
-function goToPrevious() {
+function goToPrevious(isManual = false) {
   currentIndex.value = (currentIndex.value - 1 + skills.length) % skills.length;
-  pauseAndResume();
+  if (isManual) pauseAndResume();
 }
 
-function goToSlide(index: number) {
+function goToSlide(index: number, isManual = false) {
   currentIndex.value = index;
-  pauseAndResume();
+  if (isManual) pauseAndResume();
 }
 
 const cardWidth = () => (containerWidth.value < 768 ? 256 : 320); // w-64 = 256, w-80 = 320
@@ -121,7 +124,7 @@ const totalCardSpace = () => cardWidth() + gap();
     <!-- Carousel Container -->
     <div class="flex items-center justify-center min-h-[400px] overflow-hidden">
       <div class="relative w-full h-full flex items-center justify-center">
-        <Motion
+        <!-- <Motion
           v-for="(skill, index) in skills"
           :key="skill.title"
           v-show="Math.abs(index - currentIndex) <= 2"
@@ -131,7 +134,19 @@ const totalCardSpace = () => cardWidth() + gap();
             scale: index === currentIndex ? 1.1 : 0.85,
             x: (index - currentIndex) * totalCardSpace(),
           }"
-          :transition="{ duration: 0.6, ease: 'easeInOut' }"
+          :transition="{ duration: 0.6, ease: 'easeInOut' }" -->
+        <Motion
+          v-for="(skill, index) in skills"
+          :key="skill.title"
+          v-show="Math.abs(index - currentIndex) <= 2"
+          :initial="{ opacity: 0, scale: 0.8 }"
+          :animate="{
+            opacity: index === currentIndex ? 1 : 0.4,
+            scale: index === currentIndex ? 1.1 : 0.85,
+            x: (index - currentIndex) * totalCardSpace(),
+            filter: index === currentIndex ? 'blur(0px)' : 'blur(2px)',
+          }"
+          :transition="{ duration: 0.6, ease: [0.42, 1, 0.58, 1] }"
           class="absolute cursor-pointer"
           :class="index === currentIndex ? 'z-10' : 'z-0'"
           style="left: 50%; transform: translateX(-50%)"
@@ -186,7 +201,7 @@ const totalCardSpace = () => cardWidth() + gap();
       <!-- Previous Button -->
       <Motion
         as="button"
-        @click="goToPrevious"
+        @click="goToPrevious(true)"
         class="flex items-center justify-center w-12 h-12 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
         :whileHover="{ scale: 1.05 }"
         :whileTap="{ scale: 0.95 }"
@@ -204,7 +219,7 @@ const totalCardSpace = () => cardWidth() + gap();
           v-for="(_, index) in skills"
           :key="index"
           as="button"
-          @click="goToSlide(index)"
+          @click="goToSlide(index, true)"
           class="w-3 h-3 rounded-full transition-all duration-300"
           :class="
             index === currentIndex
@@ -219,7 +234,7 @@ const totalCardSpace = () => cardWidth() + gap();
       <!-- Next Button -->
       <Motion
         as="button"
-        @click="goToNext"
+        @click="goToNext(true)"
         class="flex items-center justify-center w-12 h-12 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
         :whileHover="{ scale: 1.05 }"
         :whileTap="{ scale: 0.95 }"

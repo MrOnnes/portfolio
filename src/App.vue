@@ -39,11 +39,11 @@ import ThemeToggle from "./components/ThemeToggle.vue";
                   class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium"
                   >Skills</a
                 >
-                <!-- <a
+                <a
                   href="#projects"
                   class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium"
                   >Projects</a
-                > -->
+                >
                 <a
                   href="#contact"
                   class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium"

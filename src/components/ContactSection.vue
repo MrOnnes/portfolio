@@ -106,7 +106,7 @@
                   phone
                 </span>
               </div>
-              <span>+62 815-7444-4586</span>
+              <span>+62 815-7433-3586</span>
             </div>
           </Motion>
 
