@@ -54,7 +54,7 @@
             size="lg"
             class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
-            <a href="#skills" class="flex gap-2">
+            <a href="#projects" class="flex gap-2">
               View My Work<span class="material-symbols-outlined">
                 arrow_downward
               </span>

@@ -6,6 +6,9 @@ import portoMobileImg from "../assets/image/porto-mobile-app.png";
 import portoWebsiteImg from "../assets/image/porto-website.png";
 import portoHomi from "../assets/image/porto-homi.png";
 
+const linkResume =
+  "https://drive.google.com/file/d/1BmYsUCLmgImj6lYuyRvcIt4hC0YgBl-7/view?usp=sharing";
+
 const projects = [
   {
     title: "Mini 4WD Tools Mobile App",
@@ -39,7 +42,9 @@ const projects = [
     image: portoHomi,
     tags: ["Figma"],
     gradient: "from-orange-500 to-red-600",
-    demoUrl: "#",
+    demoUrl:
+      "https://www.figma.com/design/EyxfOSlFRbgAnNSZamw6QY/Homi---Property-Catalogue-Website?node-id=0-1&t=oCuA9ykPzWjDXsJO-1",
+    buttonText: "Go to figma",
     // codeUrl: "https://github.com/username/homi",
   },
   // {
@@ -136,7 +141,7 @@ const selectedProject = ref<(typeof projects)[0] | null>(null);
         :animate="isInView.value ? { opacity: 1, y: 0 } : {}" -->
       <Motion class="text-center mt-12">
         <a
-          href="https://drive.google.com/file/d/1MU6QjMmcez07SQRAm7q9R1JK1BKBvxPt/view?usp=sharing"
+          :href="linkResume"
           target="_blank"
           rel="noopener noreferrer"
           class="border border-purple-300 dark:border-purple-600 text-purple-700 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900 hover:border-purple-400 dark:hover:border-purple-500 px-8 py-3 rounded-full font-medium"
